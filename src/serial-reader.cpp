@@ -47,6 +47,11 @@ bool processByte(uint8_t incomingByte)
 {
     inputBuffer[inputBufferIndex++] = incomingByte;
 
+    if (inputBufferIndex == INPUT_BUFFER_SIZE)
+    {
+        inputBufferIndex = 0U;
+    }
+
     return (incomingByte == '\n');
 }
 
